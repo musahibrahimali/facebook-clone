@@ -1,1 +1,1 @@
-export { default as Logo } from './images/Facebook_f_logo.svg';
+export { default as faceBookLogo } from './images/Facebook_f_logo.svg.png';
