@@ -5,6 +5,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NearMeIcon from '@material-ui/icons/NearMe';
 import { ExpandMoreOutlined } from '@material-ui/icons';
 import { Avatar } from '@material-ui/core';
+import './Post.css';
 
 function Post(props) {
     const { profilePic, image, username, timestamp, message } = props;
@@ -21,7 +22,7 @@ function Post(props) {
                 <p>{message}</p>
             </div>
             <div className="post__image">
-                <img src={image} alt="" />
+                <img src={image} alt="graphics is here" />
             </div>
 
             <div className="post__options">

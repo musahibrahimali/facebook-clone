@@ -6,6 +6,7 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { useStateValue } from '../../../Provider/stateProvider';
 import database from '../../../Config/firebase';
 import firebase from 'firebase'
+import './MessageSender.css';
 
 
 function MessageSender() {
@@ -20,8 +21,8 @@ function MessageSender() {
         database.collection('posts').add({
             message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            profilePic: user.photoURL,
-            username: user.displayName,
+            profilePic: user?.photoURL,
+            username: user?.displayName,
             image: inputURL
         })
 
@@ -32,14 +33,14 @@ function MessageSender() {
     return (
         <div className="messageSender">
             <div className="messageSender__top">
-                <Avatar src={user.photoURL} />
+                <Avatar src={user?.photoURL} />
                 <form>
                     <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         type="text"
                         className="messageSender__input"
-                        placeholder={`What's on your mind, ${user.displayName}?`}
+                        placeholder={`What's on your mind, ${user?.displayName}?`}
                     />
                     <input
                         value={inputURL}
